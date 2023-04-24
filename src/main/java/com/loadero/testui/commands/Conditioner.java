@@ -17,7 +17,7 @@ public class Conditioner {
     }
 
     public double getLatencyUp() {
-        return latencyUp;
+        return this.latencyUp;
     }
 
     public void setLatencyUp(double latencyUp) {
@@ -25,7 +25,7 @@ public class Conditioner {
     }
 
     public double getLatencyDown() {
-        return latencyDown;
+        return this.latencyDown;
     }
 
     public void setLatencyDown(double latencyDown) {
@@ -33,7 +33,7 @@ public class Conditioner {
     }
 
     public double getJitterUp() {
-        return jitterUp;
+        return this.jitterUp;
     }
 
     public void setJitterUp(double jitterUp) {
@@ -41,7 +41,7 @@ public class Conditioner {
     }
 
     public double getJitterDown() {
-        return jitterDown;
+        return this.jitterDown;
     }
 
     public void setJitterDown(double jitterDown) {
@@ -49,7 +49,7 @@ public class Conditioner {
     }
 
     public double getRateUp() {
-        return rateUp;
+        return this.rateUp;
     }
 
     public void setRateUp(double rateUp) {
@@ -57,7 +57,7 @@ public class Conditioner {
     }
 
     public double getRateDown() {
-        return rateDown;
+        return this.rateDown;
     }
 
     public void setRateDown(double rateDown) {
@@ -65,7 +65,7 @@ public class Conditioner {
     }
 
     public double getLossUp() {
-        return lossUp;
+        return this.lossUp;
     }
 
     public void setLossUp(double lossUp) {
@@ -73,7 +73,7 @@ public class Conditioner {
     }
 
     public double getLossDown() {
-        return lossDown;
+        return this.lossDown;
     }
 
     public void setLossDown(double lossDown) {
@@ -84,14 +84,14 @@ public class Conditioner {
     protected String toJSONString() {
         JSONObject obj = new JSONObject();
 
-        obj.put("latency_up", latencyUp);
-        obj.put("latency_down", latencyDown);
-        obj.put("jitter_up", jitterUp);
-        obj.put("jitter_down", jitterDown);
-        obj.put("rate_up", rateUp);
-        obj.put("rate_down", rateDown);
-        obj.put("loss_up", lossUp);
-        obj.put("loss_down", lossDown);
+        obj.put("latency_up", this.latencyUp);
+        obj.put("latency_down", this.latencyDown);
+        obj.put("jitter_up", this.jitterUp);
+        obj.put("jitter_down", this.jitterDown);
+        obj.put("rate_up", this.rateUp);
+        obj.put("rate_down", this.rateDown);
+        obj.put("loss_up", this.lossUp);
+        obj.put("loss_down", this.lossDown);
 
         return obj.toString();
     }

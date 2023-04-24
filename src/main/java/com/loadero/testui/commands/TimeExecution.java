@@ -12,10 +12,25 @@ import testUI.Utils.Logger;
 
 public class TimeExecution {
 
+    /**
+     * Executes a lambda expression for which the execution time will be measured and reported.
+     *
+     * @param name name of the function.
+     * @param command lambda expression to be executed.
+     */
     public static void timeExecution(String name, Command command) {
         timeExecution(name, command, 0);
     }
 
+    /**
+     * Executes a lambda expression for which the execution time will be measured 
+     * and reported, timeout can be provided to specify how long the execution is allowed to take place.
+     * If zero timeout is specified, there are not time restrictions.
+     *
+     * @param name name of the function.
+     * @param command lambda expression to be executed.
+     * @param timeout time in secounds >= 0
+     */
     public static void timeExecution(String name, Command command, int timeout) {
         if (name.isEmpty()) {
             name = "anonymous";

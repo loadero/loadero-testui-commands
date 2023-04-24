@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <version>1.0.0</version>
     <name>loadero-testui-commands</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/loadero/loadero-testui-commands</url>
 
     <repositories>
         <repository>
@@ -42,13 +42,6 @@
     </dependencies>
 
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
