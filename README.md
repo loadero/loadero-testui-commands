@@ -30,14 +30,14 @@ is needed to update the `version` field in `pom.xml` file.
 
 ## Usage
 
-These PTestUI custom commands were made to simplify local script development 
+These TestUI custom commands were made to simplify local script development 
 for usage in Loadero environment. By using these commands, you can write your 
 Loadero script locally and then upload it to Loadero without any changes. This 
 also allows for more rapid development because it can be debugged and ran 
 locally. 
 
 To use the commands in your tests, you need to download this dependency to your 
-project (as shown in above) and then only import the functions in your 
+project (as shown above) and then only import the functions in your 
 script file. Keep in mind, that when migrating the script to Loadero, you do not
 need to import the functions there as-well, that will be done automatically.
 
