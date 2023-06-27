@@ -33,7 +33,7 @@ Add following lines to `build.gradle.kts`
 
 ```kotlin
 repositories {
-    maven { url = uri("https://jitpack.io") }
+    maven(url = "https://jitpack.io")
 }
 
 dependencies {
