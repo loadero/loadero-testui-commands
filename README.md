@@ -2,7 +2,10 @@
 
 ## Installation
 
-Loadero TestUI custom commands can be added to your project using Maven. 
+Loadero TestUI custom commands can be added to your project using Maven and Gradle. 
+
+### Maven
+
 To do so, first Jitpack has to be added as a repository to your `pom.xml` file:
 
 ```xml
@@ -24,17 +27,44 @@ Then add `loadero-testui-commands` as a dependency:
 </dependency>
 ```
 
-The latest tag (or master) always will be the most up-to-date version when 
-compared to the commands used in Loadero environment. To change the version, it 
-is needed to update the `version` field in `pom.xml` file.
+### Gradle (Kotlin)
+
+Add following lines to `build.gradle.kts`
+
+```kotlin
+repositories {
+    maven(url = "https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.loadero.testui.commands:loadero-testui-commands:1.0.0")
+}
+```
+
+
+### Gradle (Groovy)
+
+Add following lines to `build.gradle`
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.loadero.testui.commands:loadero-testui-commands:1.0.0'
+}
+```
+
+The latest tag will always be the most up-to-date version when compared to the 
+commands used in Loadero environment.
 
 ## Usage
 
 These TestUI custom commands were made to simplify local script development 
 for usage in Loadero environment. By using these commands, you can write your 
-Loadero script locally and then upload it to Loadero without any changes. This 
-also allows for more rapid development because it can be debugged and ran 
-locally. 
+Loadero script locally and then upload it to Loadero. This also allows for more 
+rapid development because the script can be debugged and run locally.
 
 To use the commands in your tests, you need to download this dependency to your 
 project (as shown above) and then only import the functions in your 
@@ -44,14 +74,13 @@ need to import the functions there as-well, that will be done automatically.
 This is how you can import the functions in your script file:
 
 ```java
-import static com.loadero.testui.FileDownload.waitForDownloadFinished;
-import static com.loadero.testui.FileUpload.setFile;
-import static com.loadero.testui.NetworkConditioner.updateNetwork;
-import static com.loadero.testui.UserAgent.setUserAgent;
-import static com.loadero.testui.IgnoreAlert.ignoreAlert;
-import static com.loadero.testui.RequestHeader.setRequestHeader;
-import static com.loadero.testui.TimeExecution.timeExecution;
-import static com.loadero.testui.TimeExecution.Command;
+import static com.loadero.testui.commands.FileDownload.waitForDownloadFinished;
+import static com.loadero.testui.commands.FileUpload.setFile;
+import static com.loadero.testui.commands.NetworkConditioner.updateNetwork;
+import static com.loadero.testui.commands.UserAgent.setUserAgent;
+import static com.loadero.testui.commands.IgnoreAlert.ignoreAlert;
+import static com.loadero.testui.commands.RequestHeader.setRequestHeader;
+import static com.loadero.testui.commands.TimeExecution.timeExecution;
 ```
 
 After which they can be used in your script file as any other function. 
@@ -59,7 +88,7 @@ Script example:
 
 ```java
 public void testUIWithLoadero() {
-    int reallyLongPause = 5 * 60 * 1000; // 5 minutes
+    int reallyLongPause = 5 * 60 * 1000;
     open("https://duckduckgo.com/");
 
     // Example of timing execution without specifying a timeout.
@@ -83,12 +112,20 @@ public void testUIWithLoadero() {
 }
 ```
 
-## Commands
-
 Not all commands behave the same way as they do in Loadero environment. Some of 
 them are modified to work in local environment. Such as `updateNetwork` and 
 `setRequestHeader`. The following table shows all available commands and if they 
 will behave the same in both environments.
+
+## Commands
+
+The following table shows all available commands and whether there are any 
+changes to how they function in a local environment.
+
+Full descriptions for how each function behaves in Loadero and their usage can 
+be found in [Loadero wiki](https://wiki.loadero.com/testui-java/custom-commands/)
+page. To see the differences between local and Loadero environment, you can
+compare the descriptions in the wiki to the differences mentioned in this README.
 
 | Command                   | Differences                                                                            |
 | ------------------------- | -------------------------------------------------------------------------------------- |
@@ -99,6 +136,3 @@ will behave the same in both environments.
 | `timeExecution`           | Execution time will be logged, but not saved                                           |
 | `updateNetwork`           | Network settings will not be updated                                                   |
 | `waitForDownloadFinished` | Function will finish instantly and not wait for download to be finished                |
-
-Full descriptions for each function and their usage can be found in 
-[Loadero wiki](https://wiki.loadero.com/testui/custom-commands/) page.
