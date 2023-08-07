@@ -1,5 +1,7 @@
 # loadero-testui-commands
 
+[![](https://jitpack.io/v/loadero/loadero-testui-commands.svg)](https://jitpack.io/#loadero/loadero-testui-commands)
+
 ## Installation
 
 Loadero TestUI custom commands can be added to your project using Maven and Gradle. 
@@ -21,7 +23,7 @@ Then add `loadero-testui-commands` as a dependency:
 
 ```xml
 <dependency>
-  <groupId>com.loadero.testui.commands</groupId>
+  <groupId>com.github.loadero</groupId>
   <artifactId>loadero-testui-commands</artifactId>
   <version>1.0.0</version>
 </dependency>
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.loadero.testui.commands:loadero-testui-commands:1.0.0")
+    implementation("com.github.loadero:loadero-testui-commands:1.0.0")
 }
 ```
 
@@ -52,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.loadero.testui.commands:loadero-testui-commands:1.0.0'
+    implementation 'com.github.loadero:loadero-testui-commands:1.0.0'
 }
 ```
 
