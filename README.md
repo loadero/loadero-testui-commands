@@ -1,6 +1,4 @@
-# loadero-testui-commands
-
-[![](https://jitpack.io/v/loadero/loadero-testui-commands.svg)](https://jitpack.io/#loadero/loadero-testui-commands)
+# loadero-testui-commands [![](https://jitpack.io/v/loadero/loadero-testui-commands.svg)](https://jitpack.io/#loadero/loadero-testui-commands)
 
 ## Installation
 
@@ -90,18 +88,18 @@ Script example:
 
 ```java
 public void testUIWithLoadero() {
-    int reallyLongPause = 5 * 60 * 1000;
+    int reallyLongPause = 5 * 60 * 1000; // 5 minutes
     open("https://duckduckgo.com/");
 
     // Example of timing execution without specifying a timeout.
     timeExecution(
         "locate_search_bar_and_wait",
         () -> {
-            E(byCssSelector("#search_form_input_homepage"))
+            E(byCssSelector("#searchbox_input"))
                 .waitFor(10)
                 .untilIsVisible()
                 .sendKeys("loadero");
-            E(byCssSelector("#search_button_homepage"))
+            E(byCssSelector("[aria-label='Search']"))
                 .waitFor(10)
                 .untilIsVisible()
                 .click();
