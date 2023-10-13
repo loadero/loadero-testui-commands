@@ -4,7 +4,7 @@
     <groupId>com.loadero.testui.commands</groupId>
     <artifactId>loadero-testui-commands</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>loadero-testui-commands</name>
     <url>https://github.com/loadero/loadero-testui-commands</url>
 
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20220320</version>
+            <version>20230618</version>
         </dependency>
     </dependencies>
 

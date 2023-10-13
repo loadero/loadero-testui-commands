@@ -23,7 +23,7 @@ Then add `loadero-testui-commands` as a dependency:
 <dependency>
   <groupId>com.github.loadero</groupId>
   <artifactId>loadero-testui-commands</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.loadero:loadero-testui-commands:1.0.0")
+    implementation("com.github.loadero:loadero-testui-commands:1.0.1")
 }
 ```
 
@@ -51,7 +51,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.loadero:loadero-testui-commands:1.0.0'
+    implementation 'com.github.loadero:loadero-testui-commands:1.0.1'
 }
 ```
 
