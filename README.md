@@ -92,12 +92,12 @@ public void testUIWithLoadero() {
 
     // Example of timing execution without specifying a timeout.
     timeExecution(
-        "locate_search_bar_and_wait",
+        "locate_search_bar",
         () -> {
             E(byCssSelector("#searchbox_input"))
                 .waitFor(10)
                 .untilIsVisible()
-                .sendKeys("loadero");
+                .sendKeys("QA Processes");
             E(byCssSelector("[aria-label='Search']"))
                 .waitFor(10)
                 .untilIsVisible()
