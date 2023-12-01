@@ -134,15 +134,15 @@ compare the descriptions in the wiki to the differences mentioned in this README
 
 | Command                   | Differences                                                                                                                                   |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ignoreAlert`             | No differences                                                                                                                                |
-| `setFile`                 | Any local file can be used, Loadero constant can be used if the same file name is used                                                        |
-| `setRequestHeader`        | No request header will be set                                                                                                                 |
-| `setUserAgent`            | User agent won't be changed                                                                                                                   |
-| `timeExecution`           | Execution time will be logged, but not saved                                                                                                  |
-| `updateNetwork`           | Network settings will not be updated                                                                                                          |
 | `waitForDownloadFinished` | Function will finish instantly and not wait for download to be finished                                                                       |
-| `genEmail`                | Full email or only first part can be provided, if only the first part is provided than `@mailinator` is appended                              |
+| `setFile`                 | Any local file can be used, Loadero constant can be used if the same file name is used                                                        |
+| `ignoreAlert`             | No differences                                                                                                                                |
+| `updateNetwork`           | Network settings will not be updated                                                                                                          |
 | `receiveEmail`            | By default an empty array will be returned, but `emails.json` file can be saved in the working directory which will contain all of the emails |
+| `genEmail`                | Full email or only first part can be provided, if only the first part is provided than `@mailinator` is appended                              |
+| `setRequestHeader`        | No request header will be set                                                                                                                 |
+| `timeExecution`           | Execution time will be logged, but not saved                                                                                                  |
+| `setUserAgent`            | User agent won't be changed                                                                                                                   |
 
 The `emails.json` file should be located in the same directory where `pom.xml` file is located in your project and should have the following structure:
 
