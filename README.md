@@ -73,11 +73,17 @@ need to import the functions there as-well, that will be done automatically.
 This is how you can import the functions in your script file:
 
 ```java
+import com.loadero.testui.commands.Conditioner;
+import com.loadero.testui.commands.ConditionerBuilder;
+import com.loadero.testui.commands.EmailMessage;
+
 import static com.loadero.testui.commands.FileDownload.waitForDownloadFinished;
 import static com.loadero.testui.commands.FileUpload.setFile;
 import static com.loadero.testui.commands.NetworkConditioner.updateNetwork;
 import static com.loadero.testui.commands.UserAgent.setUserAgent;
 import static com.loadero.testui.commands.IgnoreAlert.ignoreAlert;
+import static com.loadero.testui.commands.ReceiveEmail.receiveEmail;
+import static com.loadero.testui.commands.ReceiveEmail.genEmail;
 import static com.loadero.testui.commands.RequestHeader.setRequestHeader;
 import static com.loadero.testui.commands.TimeExecution.timeExecution;
 ```
@@ -126,12 +132,38 @@ be found in [Loadero wiki](https://wiki.loadero.com/docs/testui-java/custom-comm
 page. To see the differences between local and Loadero environment, you can
 compare the descriptions in the wiki to the differences mentioned in this README.
 
-| Command                   | Differences                                                                            |
-| ------------------------- | -------------------------------------------------------------------------------------- |
-| `ignoreAlert`             | No differences                                                                         |
-| `setFile`                 | Any local file can be used, Loadero constant can be used if the same file name is used |
-| `setRequestHeader`        | No request header will be set                                                          |
-| `setUserAgent`            | User agent won't be changed                                                            |
-| `timeExecution`           | Execution time will be logged, but not saved                                           |
-| `updateNetwork`           | Network settings will not be updated                                                   |
-| `waitForDownloadFinished` | Function will finish instantly and not wait for download to be finished                |
+| Command                   | Differences                                                                                                                                   |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `genEmail`                | Full email or only first part can be provided, if only the first part is provided then `@mailinator.com` is appended                          |
+| `ignoreAlert`             | No differences                                                                                                                                |
+| `receiveEmail`            | By default an empty array will be returned, but `emails.json` file can be saved in the working directory which will contain all of the emails |
+| `setFile`                 | Any local file can be used, Loadero constant can be used if the same file name is used                                                        |
+| `setRequestHeader`        | No request header will be set                                                                                                                 |
+| `setUserAgent`            | User agent won't be changed                                                                                                                   |
+| `timeExecution`           | Execution time will be logged, but not saved                                                                                                  |
+| `updateNetwork`           | Network settings will not be updated                                                                                                          |
+| `waitForDownloadFinished` | Function will finish instantly and not wait for download to be finished                                                                       |
+
+The `emails.json` file should be located in the same directory where `pom.xml` 
+file is located in your project and should have the following structure:
+
+```json
+{
+  "emails": [
+    {
+      "from": "email_from",
+      "to": "email_to",
+      "headers": {
+        "header1": "header_value"
+      },
+      "subject": "email_subject",
+      "text/html": "html body",
+      "text/plain": "plain text body"
+    }
+  ]
+}
+```
+
+To simulate a more realistic environment, you can modify the `emails.json` file 
+mid-run to add additional emails to the array. The file will be read every time
+the `receiveEmail` command is called.
