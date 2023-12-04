@@ -37,24 +37,4 @@ public class EmailMessage {
     public String getTextHtml() {
         return textHtml;
     }
-
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public void setHeaders(Map<String, String> headers) {
-        this.headers = headers;
-    }
-
-    public void setTextPlain(String textPlain) {
-        this.textPlain = textPlain;
-    }
-
-    public void setTextHtml(String textHtml) {
-        this.textHtml = textHtml;
-    }
 }
