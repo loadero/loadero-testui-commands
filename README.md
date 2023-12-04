@@ -139,7 +139,7 @@ compare the descriptions in the wiki to the differences mentioned in this README
 | `ignoreAlert`             | No differences                                                                                                                                |
 | `updateNetwork`           | Network settings will not be updated                                                                                                          |
 | `receiveEmail`            | By default an empty array will be returned, but `emails.json` file can be saved in the working directory which will contain all of the emails |
-| `genEmail`                | Full email or only first part can be provided, if only the first part is provided than `@mailinator` is appended                              |
+| `genEmail`                | Full email or only first part can be provided, if only the first part is provided then `@mailinator.com` is appended                          |
 | `setRequestHeader`        | No request header will be set                                                                                                                 |
 | `timeExecution`           | Execution time will be logged, but not saved                                                                                                  |
 | `setUserAgent`            | User agent won't be changed                                                                                                                   |
