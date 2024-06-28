@@ -13,6 +13,8 @@ public class IgnoreAlert {
         try {
             getSelenideDriver().switchTo().alert().accept();
         } catch (NoAlertPresentException e) {
+            System.out.println("[INFO] Loadero: No alert is open.");
+
             return;
         }
     }
